@@ -60,14 +60,14 @@ sub get_dbh {
     my $config = get_config();
     my ( $host, $user, $pass, $port );
 
-    if ( !defined $config->{$database_name} ) {
+    if ( !defined $config->{'database'}->{$database_name} ) {
         confess "No database connection details for $database_name";
     }
     else {
-        $host = $config->{$database_name}->{'host'};
-        $user = $config->{$database_name}->{'user'};
-        $pass = $config->{$database_name}->{'pass'};
-        $port = $config->{$database_name}->{'port'};
+        $host = $config->{'database'}->{$database_name}->{'host'};
+        $user = $config->{'database'}->{$database_name}->{'user'};
+        $pass = $config->{'database'}->{$database_name}->{'pass'};
+        $port = $config->{'database'}->{$database_name}->{'port'};
     }
 
     my $dbh;
