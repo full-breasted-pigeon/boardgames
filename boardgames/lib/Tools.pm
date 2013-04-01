@@ -34,7 +34,7 @@ sub get_config{
     
     my $config;
     eval {
-        my $config = XMLin($CONFIGFILE, KeyAttr => { database => 'dbname' }, ForceArray => [ 'database' ]); 
+        $config = XMLin($CONFIGFILE, KeyAttr => { database => 'dbname' }, ForceArray => [ 'database' ]); 
         1;
     }
     or do {
@@ -42,6 +42,7 @@ sub get_config{
     };
     
     if (defined $config){
+        $CONFIG = $config;
         return $CONFIG;
     }
     else{
