@@ -1,0 +1,9 @@
+<config>
+  <database
+    dbname = "databasename"
+    host   = "localhost"
+    port   = "1234"
+    user   = "user"
+    pass   = "pass"
+  />
+</config>
